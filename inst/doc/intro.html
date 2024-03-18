@@ -12,7 +12,7 @@
 
 <meta name="author" content="Yu Meng" />
 
-<meta name="date" content="2024-02-23" />
+<meta name="date" content="2024-03-18" />
 
 <title>Introduction to smcryptoR</title>
 
@@ -341,7 +341,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Introduction to smcryptoR</h1>
 <h4 class="author">Yu Meng</h4>
-<h4 class="date">2024-02-23</h4>
+<h4 class="date">2024-03-18</h4>
 
 
 
@@ -387,13 +387,13 @@ derived from the private key, but not the other way around.</p>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sk <span class="ot">&lt;-</span> keypair<span class="sc">$</span>private_key</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>pk <span class="ot">&lt;-</span> keypair<span class="sc">$</span>public_key</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>sk</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;eee8e15c93d8ef6cf9514836a9f0e0a8f0d17d9edbd03bf3ef21f60263fa6f9e&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;0dbf3ea63efd867a41822a1cd2ee485ebe3993432fbcf2e96bfbadd3be2b6ac3&quot;</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>pk</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;a934cfaf7167e4c09680d8d22811439ccc24a3692017254fc028a98ad1e6722d7e4a8301d750a8737b576d900744338f64eba88f25b4841d6fb455a8d220fff2&quot;</span></span></code></pre></div>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;eab671dfeed05b8c4c89f7d5c4872f3985501dd9c7764063c13303d97ef899d611387457af41cb9ada26bb99559452fe19a88d74e16107a600f76e4b10d087c5&quot;</span></span></code></pre></div>
 <p>You can also export the public key from a private key.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pk <span class="ot">&lt;-</span> <span class="fu">sm2_pk_from_sk</span>(sk)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pk</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;a934cfaf7167e4c09680d8d22811439ccc24a3692017254fc028a98ad1e6722d7e4a8301d750a8737b576d900744338f64eba88f25b4841d6fb455a8d220fff2&quot;</span></span></code></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;eab671dfeed05b8c4c89f7d5c4872f3985501dd9c7764063c13303d97ef899d611387457af41cb9ada26bb99559452fe19a88d74e16107a600f76e4b10d087c5&quot;</span></span></code></pre></div>
 </div>
 <div id="signverify" class="section level3">
 <h3>Sign/Verify</h3>
@@ -424,10 +424,10 @@ slow.</p>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>enc <span class="ot">&lt;-</span> <span class="fu">sm2_encrypt</span>(data, pk)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">## cipher text</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>enc</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] 38 e6 05 23 cb 02 1a 6b 6c c4 27 8f 86 40 9e 7f 32 d7 c2 80 a1 4d 84 5d 2a</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [26] 78 5c 98 b3 e4 51 18 fb fe 9c 55 c3 c9 44 ba 57 31 b0 24 60 5c 57 6e bc 27</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [51] da 29 9d b5 6b cb ad c0 37 4b ab 78 c5 67 70 b8 74 da ee 52 7d 6f ee 4a ed</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [76] 35 de 2b 98 25 6d 6b 53 cf ec da 89 00 3b 92 4d 9c df 8b 5b 6b 09 67 4f</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] b2 dd a3 01 79 64 de 69 5c a2 ea 7e 61 61 5f 2c fe dc 4d 1c a6 af ec 40 51</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [26] e3 84 34 83 3a 94 7c d4 e2 bc e2 ac 57 90 a0 8a a9 95 c7 d3 d2 23 7f a0 b1</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [51] 72 f5 dd 02 e8 70 3e 81 89 64 a2 b4 bf ac 0c 5e c6 7f 99 e9 13 67 af 1c ea</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [76] 37 35 5b a9 8d bc 01 9b f9 77 07 ec 51 0e 73 de 3b 77 1f c4 0f 3f 43 ca</span></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="do">## decrypt using private key</span></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>dec <span class="ot">&lt;-</span> <span class="fu">sm2_decrypt</span>(enc, sk)</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="do">## plain text</span></span>
@@ -441,14 +441,14 @@ or base64 format and decrypt them from these formats.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>enc <span class="ot">&lt;-</span> <span class="fu">sm2_encrypt_base64</span>(data, pk)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="do">## cipher text as base64</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>enc</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;CprfxCL8w0kXS39Z4BKD5iE9JoumzA17NsJzYzdoKpYBf9dgJYBhCPW53ZljxdIVqBczuhNjaA4LY/V0Cunk30nCrBjXVbvL/Pf4fOWQtn9Qklh5IH44UUHGKMUocnr5OXKA&quot;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;IKKpuCTG0TgI0OwLek/nY/i7/iy9737Xe57GbmiTOxyBB4Ua+N/cZ5oVLrHknHM1EXL488JUiaDmU2d6rYu6lEGWvpTD+qyNS5t3a98u2VI8n+ZjoUx33PXVM2W6Vm7Lzmf2&quot;</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sm2_decrypt_base64</span>(enc, sk) <span class="sc">|&gt;</span> <span class="fu">rawToChar</span>()</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;abc&quot;</span></span></code></pre></div>
 <p>Or you can use hex as output instead.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>enc <span class="ot">&lt;-</span> <span class="fu">sm2_encrypt_hex</span>(data, pk)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="do">## cipher text as hex</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>enc</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;2df22b09e6caae9c1aa9fe6d5a6f4af94ce9e8c5824e5037a9b46724a88f19b46b0c6528abc4c4dc0909ba7a1b10ac0f184ca839c39d43cbccc41ab09d2be88f8e8afdba8285d160c3a73361a9d2d5156866aaca1df8f83e52969eca5edf783be7020b&quot;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;7dad0f006314f93d1e30126d1e436b5a104f1ffd9555cfa03e245b399f8933df8238109021ffc3c75df633c3d8be2efd605f39d9163823ff788b5dbf2402f386ffc486cb32aedb05bf72e679d76d2b2f50952e5bd2b6caf79f946516aabe2dc45bdcc1&quot;</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sm2_decrypt_hex</span>(enc, sk) <span class="sc">|&gt;</span> <span class="fu">rawToChar</span>()</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;abc&quot;</span></span></code></pre></div>
 </div>
@@ -473,9 +473,9 @@ B.</p>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>step_2_a <span class="ot">&lt;-</span> <span class="fu">sm2_keyexchange_2a</span>(id_a, private_key_a, step_1_a<span class="sc">$</span>private_key_r, step_1_b<span class="sc">$</span>data)</span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>step_2_b <span class="ot">&lt;-</span> <span class="fu">sm2_keyexchange_2b</span>(id_b, private_key_b, step_1_b<span class="sc">$</span>private_key_r, step_1_a<span class="sc">$</span>data)</span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>step_2_a<span class="sc">$</span>k</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;463d270ebf6c9ddf44a85c65de53c5ec&quot;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;00c365484451c918e6e30a43ffa33478&quot;</span></span>
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>step_2_b<span class="sc">$</span>k</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;463d270ebf6c9ddf44a85c65de53c5ec&quot;</span></span></code></pre></div>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;00c365484451c918e6e30a43ffa33478&quot;</span></span></code></pre></div>
 <p>The output key <code>k</code> should be length of 16 and
 <code>step_2_a$k</code> and <code>step_2_b$k</code> should be equal.</p>
 </div>

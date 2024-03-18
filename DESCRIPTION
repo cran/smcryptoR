@@ -1,7 +1,7 @@
 Package: smcryptoR
 Type: Package
 Title: ShangMi(SM) Cryptographic Algorithms(SM2/SM3/SM4)
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: person("Meng", "Yu", role = c("aut", "cre"), email = "610074@gmail.com",
     comment = c(ORCID = "0009-0005-9794-5522"))
 Description: Bindings to 'smcrypto' <https://github.com/zhuobie/smcrypto>: a 'Rust'
@@ -17,10 +17,10 @@ SystemRequirements: Cargo (Rust's package manager), rustc
 Biarch: true
 RoxygenNote: 7.2.3
 NeedsCompilation: yes
-Packaged: 2024-02-23 10:11:00 UTC; yumeng
+Packaged: 2024-03-18 14:09:54 UTC; yumeng
 Maintainer: Meng Yu <610074@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-02-26 16:30:04 UTC
+Date/Publication: 2024-03-18 19:10:02 UTC
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 Author: Meng Yu [aut, cre] (<https://orcid.org/0009-0005-9794-5522>)
